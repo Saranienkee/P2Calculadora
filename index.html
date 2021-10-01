@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calculator app</title>
+  <script type="text/javascript" src="calculos.js"></script>
+</head>
+<body id="numFond" class="fondoColT3">
+  <div class="container d-flex flex-row justify-content-center align-items-center">
+    <div class="col-xl-4" style="text-align: center">
+      <div class="row py-3 mx-auto d-flex " id="top">
+        <div id="numCalc" class="col-7 me-auto temaYNumsT3 d-flex">
+          <div class=""><span class="calcTam">calc</span></div>
+        </div>
+        <div class="col-2 align-items-end d-flex ">
+          <div><span id="numth" class="temTam">THEME</span></div>
+        </div>
+        <div  class="col-3 temaYNumsT3 align-content-end" >
+
+          <div class="">
+            <div class="row">
+              <div class="col-4 text-center "><span id="numTema1" class="temaYNumsT3 temTam">1</span></div>
+              <div  class="col-4 text-center "><span id="numTema2" class="temaYNumsT3 temTam">2</span></div>
+              <div  class="col-4 text-center "><span id="numTema3" class="temaYNumsT3 temTam">3</span></div>
+            </div>
+            <div>
+              <input id="sliderVal" class="sliderT3" type="range" min="1" max="3" value="0" oninput="changeTheme(this.value)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-4 my-1 mx-auto" >
+        <div id="numLabFond" class="labDivT3 col-12">
+          <label  class="labTextT3" id="pantalla"> 0</label>
+        </div>
+      </div>
+      <div id="numFondBot" class="px-4 py-2 redondear backBottonesT3 mx-auto" id="bottom">
+        <div class="row py-3">
+          <div class="col-3 text-center">
+            <button type="button" id="num7" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('7')">7</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num8" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('8')">8</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num9" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('9')">9</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="borrar" class=" otrosT3 px-3 py-2" onclick="IngresoNum('del')">DEL</button>
+          </div>
+        </div>
+        <div class="row py-3" >
+          <div class="col-3 text-center">
+            <button type="button" id="num4" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('4')">4</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num5" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('5')">5</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num6" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('6')">6</button>
+          </div>
+          <div id="+" class="col-3 text-center">
+            <button type="button" id="numMas" class=" NumerosYSignosT3 px-4 py-1" onclick="operators('+')">+</button>
+          </div>
+        </div>
+        <div class="row py-3" >
+          <div class="col-3 text-center">
+            <button type="button" id="num1" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('1')">1</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num2" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('2')">2</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num3" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('3')">3</button>
+          </div >
+          <div id="-" class="col-3 text-center">
+            <button type="button" id="numMenos" class=" NumerosYSignosT3 px-4 py-1" onclick="operators('-')">-</button>
+          </div>
+        </div>
+        <div class="row py-3" >
+          <div class="col-3 text-center">
+            <button type="button" id="numPunto" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('.')">.</button>
+          </div>
+          <div class="col-3 text-center">
+            <button type="button" id="num0" class=" NumerosYSignosT3 px-4 py-1" onclick="IngresoNum('0')">0</button>
+          </div>
+          <div id="/" class="col-3 text-center">
+            <button type="button" id="numDivi" class=" NumerosYSignosT3 px-4 py-1" onclick="operators('/')">/</button>
+          </div>
+          <div id="x" class="col-3 text-center">
+            <button type="button" id="numMulti" class=" NumerosYSignosT3 px-4 py-1" onclick="operators('x')">x</button>
+          </div>
+        </div>
+        <div class="row py-3" >
+          <div class="col-6 text-center">
+            <button type="button" id="otraVez" class=" otrosT3 px-5 py-2" onclick="resetFunc()">RESET</button>
+          </div>
+          <div class="col-6 text-center">
+            <button type="button" id="igualar" class=" igualT3 " onclick="igual()">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
